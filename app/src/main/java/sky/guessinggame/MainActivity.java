@@ -26,6 +26,9 @@ public class MainActivity extends AppCompatActivity {
         EditText edit = (EditText)findViewById(R.id.numberEditText);
         // Converting String to Integer
         int numberGuess = Integer.parseInt(String.valueOf(edit.getText()));
+        // Alternative to above code
+        // int numberGuess = Integer.parseInt(edit.getText().toString());
+        // This code would also work for the conversion.
 
         // If statement to compare the number entered with the generated number
         // Show toast depending on the number entered
