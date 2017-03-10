@@ -33,11 +33,21 @@ public class MainActivity extends AppCompatActivity {
         // If statement to compare the number entered with the generated number
         // Show toast depending on the number entered
         if(numberGuess == number){
-            Toast.makeText(this, "You are correct!!", Toast.LENGTH_SHORT).show();
+            makeToast("That is right!! Try again?");
+            // Generate a new number to guess once the answer was guessed right previously
+            Random random = new Random();
+            number = random.nextInt(20) + 1;
+
         }else if(numberGuess > number){
-            Toast.makeText(this, "Try lower", Toast.LENGTH_SHORT).show();
+            makeToast("Try lower");
+
         }else if(numberGuess < number){
-            Toast.makeText(this, "Try higher", Toast.LENGTH_SHORT).show();
+            makeToast("Try higher");
         }
+    }
+
+    // makeToast method
+    public void makeToast(String string){
+        Toast.makeText(this, string, Toast.LENGTH_SHORT).show();
     }
 }
